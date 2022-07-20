@@ -22,7 +22,9 @@ end
 
 
 class SignUp
+
   include SessionModule
+
   def usersignup
      puts"enter username"
      $name = gets.chomp
@@ -49,9 +51,10 @@ class SignUp
      else
         puts "invalid"
      end
+
   end
 
   $sg1 = SignUp.new
 
-  end
+end
 

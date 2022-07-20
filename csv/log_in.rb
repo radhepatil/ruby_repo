@@ -4,11 +4,11 @@ module LoginModule
   class EmployLogIn
     def in_time()
        punch_in = Time.new
-       $t1 = punch_in.strftime("%I:%M")
+       $t1 = punch_in.strftime("%H:%M:%S")
     end
     def out_time()
       punch_out = Time.new
-      $t2 = punch_out.strftime("%I:%M")
+      $t2 = punch_out.strftime("%H:%M:%S")
     end
 
   end
