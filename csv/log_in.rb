@@ -71,7 +71,7 @@ class Function
  include LoginModule
   def log_in
 
-     CSV.foreach('text.csv', 'a+') do |csv|
+     CSV.foreach('text.csv', 'r') do |row|
 
        if $name == $uname && $password == $pwd
          puts "succesfully login"

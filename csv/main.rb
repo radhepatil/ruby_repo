@@ -22,8 +22,9 @@ while 1
    when 3
     $lg2.userlogouttime
 
-    $productive_hours = (Time.parse($t2) - Time.parse($t1)) * 60
-    puts "thanks, your productive hours #{$productive_hours}: "
+    $ph = (Time.parse($t2) - Time.parse($t1))
+    $productive_hours = Time.at($ph).utc.strftime("%H:%M:%S")
+    puts "thanks, your productive hours: #{$productive_hours}"
     break
   end
 end
