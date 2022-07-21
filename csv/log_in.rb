@@ -4,11 +4,11 @@ module LoginModule
   class EmployLogIn
     def in_time()
        punch_in = Time.new
-       $t1 = punch_in.strftime("%H:%M:%S")
+       $t1 = punch_in.strftime("%H:%M:%S:%p")
     end
     def out_time()
       punch_out = Time.new
-      $t2 = punch_out.strftime("%H:%M:%S")
+      $t2 = punch_out.strftime("%H:%M:%S:%p")
     end
 
   end
@@ -36,10 +36,10 @@ class LogIn
 
    def userlogin
 
-     puts"enter username"
+     puts"Enter Username"
      $uname = gets.chomp
 
-     puts "enter password"
+     puts "Enter Password"
      $pwd = gets.chomp
    end
 
@@ -50,8 +50,21 @@ class LogIn
       puts "you are log in at #{$t1}"
       end
    end
+   def log_in
+
+     CSV.foreach('text.csv', 'r') do |row|
+
+       if $name == $uname && $password == $pwd
+         puts "succesfully login"
+       else
+         puts "invalid credentials."
+       end
+
+     end
+  end
       $lg1 = LogIn.new
       $li = LogIn.new
+      $m1 = LogIn.new
 end
 
 class LogOut
@@ -67,19 +80,3 @@ class LogOut
 
 end
 
-class Function
- include LoginModule
-  def log_in
-
-     CSV.foreach('text.csv', 'r') do |row|
-
-       if $name == $uname && $password == $pwd
-         puts "succesfully login"
-       else
-         puts "invalid credentials."
-       end
-
-     end
-  end
-     $m1 = Function.new
-end

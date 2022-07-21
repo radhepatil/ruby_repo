@@ -26,7 +26,7 @@ class SignUp
   include SessionModule
 
   def usersignup
-     puts"enter username"
+     puts"Enter Username"
      $name = gets.chomp
      if namevalid($name)
         puts "valid"
@@ -34,7 +34,7 @@ class SignUp
         puts "invalid"
      end
 
-     puts "enter your email-id"
+     puts "Enter your email-id"
      $email = gets.chomp
 
      if emailvalid($email)
@@ -43,7 +43,7 @@ class SignUp
         puts "invalid"
      end
 
-     puts "enter password"
+     puts "Enter Password"
      $password = gets.chomp
 
      if passvalid($password)
